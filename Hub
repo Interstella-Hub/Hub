@@ -1071,18 +1071,5 @@ local function initLibrary()
 end;
 
 
-function PopupGui()
-if script.Parent.Visible==true then script.Parent.Visible=false
-else script.Parent.Visible=true
-end
-end
-
-
-game:GetService("UserInputService").InputBegan:Connect(function(key)
-if key.KeyCode==Enum.KeyCode.LeftAlt then
-PopupGui()
-end
-end)
-
 
 return initLibrary();
