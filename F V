@@ -1,0 +1,107 @@
+--Fade for Vamp
+
+local LoadingFade = Instance.new("ScreenGui")
+local LoadingFadeFrame = Instance.new("Frame")
+local Logo = Instance.new("ImageLabel")
+local UIGradient = Instance.new("UIGradient")
+local LoadingFadeMadeByText = Instance.new("TextLabel")
+local LoadingFadeLOADINGText = Instance.new("TextLabel")
+
+--Properties:
+
+LoadingFade.Name = "LoadingFade"
+LoadingFade.Parent = game.CoreGui
+LoadingFade.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+LoadingFade.ResetOnSpawn = false
+
+LoadingFadeFrame.Name = "LoadingFadeFrame"
+LoadingFadeFrame.Parent = LoadingFade
+LoadingFadeFrame.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+LoadingFadeFrame.BackgroundTransparency = 1.000
+LoadingFadeFrame.BorderColor3 = Color3.fromRGB(27, 42, 53)
+LoadingFadeFrame.BorderSizePixel = 0
+LoadingFadeFrame.Position = UDim2.new(0, 0, -0.100000009, 0)
+LoadingFadeFrame.Size = UDim2.new(1, 0, 1.0999999, 0)
+
+Logo.Name = "Logo"
+Logo.Parent = LoadingFadeFrame
+Logo.AnchorPoint = Vector2.new(0.5, 0.5)
+Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Logo.BackgroundTransparency = 1.000
+Logo.Position = UDim2.new(0.499570191, 0, 0.54463625, 0)
+Logo.Size = UDim2.new(0.417292774, 0, 0.260840863, 0)
+Logo.SizeConstraint = Enum.SizeConstraint.RelativeXX
+Logo.ZIndex = 2
+Logo.Image = "http://www.roblox.com/asset/?id=5420085745"
+Logo.ScaleType = Enum.ScaleType.Crop
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(0.02, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
+UIGradient.Rotation = -90
+UIGradient.Parent = Logo
+
+LoadingFadeMadeByText.Name = "LoadingFadeMadeByText"
+LoadingFadeMadeByText.Parent = LoadingFade
+LoadingFadeMadeByText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+LoadingFadeMadeByText.BackgroundTransparency = 1.000
+LoadingFadeMadeByText.BorderSizePixel = 0
+LoadingFadeMadeByText.LayoutOrder = -3
+LoadingFadeMadeByText.Position = UDim2.new(0.830601037, 0, 0.938401937, 0)
+LoadingFadeMadeByText.Size = UDim2.new(0.163934425, 0, 0.0605564639, 0)
+LoadingFadeMadeByText.Font = Enum.Font.GothamBlack
+LoadingFadeMadeByText.Text = "Made by DisbeliefOrigins"
+LoadingFadeMadeByText.TextColor3 = Color3.fromRGB(255, 255, 255)
+LoadingFadeMadeByText.TextScaled = true
+LoadingFadeMadeByText.TextSize = 14.000
+LoadingFadeMadeByText.TextTransparency = 0.500
+LoadingFadeMadeByText.TextWrapped = true
+
+LoadingFadeLOADINGText.Name = "LoadingFadeLOADINGText"
+LoadingFadeLOADINGText.Parent = LoadingFade
+LoadingFadeLOADINGText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+LoadingFadeLOADINGText.BackgroundTransparency = 1.000
+LoadingFadeLOADINGText.BorderSizePixel = 0
+LoadingFadeLOADINGText.LayoutOrder = -3
+LoadingFadeLOADINGText.Position = UDim2.new(-3.10540199e-05, 0, 0.938401937, 0)
+LoadingFadeLOADINGText.Size = UDim2.new(0.163934425, 0, 0.0605564639, 0)
+LoadingFadeLOADINGText.Font = Enum.Font.GothamBlack
+LoadingFadeLOADINGText.Text = "Loading Vampyrism MKII 2.0..."
+LoadingFadeLOADINGText.TextColor3 = Color3.fromRGB(255, 255, 255)
+LoadingFadeLOADINGText.TextScaled = true
+LoadingFadeLOADINGText.TextSize = 14.000
+LoadingFadeLOADINGText.TextTransparency = 0.500
+LoadingFadeLOADINGText.TextWrapped = true
+
+wait(5)
+
+
+
+-- Scripts:
+
+local function VHVWS_fake_script() -- Logo.LocalScript 
+	local script = Instance.new('LocalScript', Logo)
+
+	-- xuefei was here https://twitter.com/XueTheDev
+	
+	local tweenService = game:GetService("TweenService") -- defines tweenservice
+	
+	script.Parent.Parent.Parent.Enabled = true -- optional, only if you have the GUI disabled for studio editing purposes
+	game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.All,false) -- optional
+	
+	local length = 1.5-- you can modify this if you are using ContentProvider
+	
+	local tweenInfo = TweenInfo.new(length,Enum.EasingStyle.Linear) -- creates tweeninfo, you can configure this
+	
+	wait(1) -- so the player can spawn in, you will need to change this
+	
+	local info = {}
+	info.Offset = Vector2.new(0,-1) -- creates the tween target, you will have to mess with this if you use different angles (this is from the bottom, -90)
+	
+	local tween = tweenService:Create(script.Parent.UIGradient,tweenInfo,info) -- creates tween
+	tween:Play() -- plays tween
+	
+	wait(length+2) -- waits for tween to finish +1 second for aesthetics (optional)
+	
+	game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.All,true) -- optional
+	script.Parent.Parent.Parent:Destroy() -- removes the gui (make sure ResetOnSpawn is false!)
+end
+coroutine.wrap(VHVWS_fake_script)()
