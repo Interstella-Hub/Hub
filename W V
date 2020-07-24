@@ -88,8 +88,9 @@ LoginButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 LoginButton.TextSize = 14.000
 LoginButton.MouseButton1Down:connect(function()
 if UsernameTextBox.Text == "Roses" and PasswordTextBox.Text == "Red" then
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/Interstella-Hub/Hub/master/V"))();
 		LoginFrame.Visible = false 
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Interstella-Hub/Hub/master/V"))();
+		
 	
 end
 
