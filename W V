@@ -1,7 +1,16 @@
---Whitelist for VAMP
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+
 
 local WhitelistScreen = Instance.new("ScreenGui")
 local LoginFrame = Instance.new("Frame")
+
+local RejoinButton = Instance.new("TextButton")
+
+
 local InterstellaHubText = Instance.new("TextLabel")
 local LineHub = Instance.new("TextLabel")
 local UsernameTextBox = Instance.new("TextBox")
@@ -26,6 +35,22 @@ LoginFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 LoginFrame.BorderColor3 = Color3.fromRGB(27, 42, 53)
 LoginFrame.Position = UDim2.new(0, 0, 0.289009482, 0)
 LoginFrame.Size = UDim2.new(0, 227, 0, 311)
+
+RejoinButton.Name = "Rejoin Button"
+RejoinButton.Parent = WhitelistScreen
+RejoinButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+RejoinButton.Position = UDim2.new(0, 0, 0.848032534, 0)
+RejoinButton.BorderColor3 = Color3.fromRGB(13, 21, 27)
+RejoinButton.BorderSizePixel = 2
+RejoinButton.Size = UDim2.new(0, 108, 0, 32)
+RejoinButton.Font = Enum.Font.GothamSemibold
+RejoinButton.Text = "Rejoin"
+RejoinButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+RejoinButton.TextSize = 14.000
+RejoinButton.MouseButton1Down:connect(function()
+game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
+end)
+
 
 InterstellaHubText.Name = "InterstellaHub Text"
 InterstellaHubText.Parent = LoginFrame
@@ -90,7 +115,6 @@ LoginButton.MouseButton1Down:connect(function()
 if UsernameTextBox.Text == "Roses" and PasswordTextBox.Text == "Red" then
 		LoginFrame.Visible = false 
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Interstella-Hub/Hub/master/V"))();
-		
 	
 end
 
@@ -145,7 +169,7 @@ KcrolAdminText.BackgroundTransparency = 1.000
 KcrolAdminText.Position = UDim2.new(-0.00178217888, 0, 0.161579877, 0)
 KcrolAdminText.Size = UDim2.new(0, 229, 0, 43)
 KcrolAdminText.Font = Enum.Font.GothamBlack
-KcrolAdminText.Text = "Vampyrism MKII 2.0"
+KcrolAdminText.Text = Vampyrism MKII 2.0"
 KcrolAdminText.TextColor3 = Color3.fromRGB(255, 255, 255)
 KcrolAdminText.TextSize = 13.000
 
