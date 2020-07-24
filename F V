@@ -1,3 +1,5 @@
+
+
 --Fade for Vamp
 
 local LoadingFade = Instance.new("ScreenGui")
@@ -71,11 +73,9 @@ LoadingFadeLOADINGText.TextSize = 14.000
 LoadingFadeLOADINGText.TextTransparency = 0.500
 LoadingFadeLOADINGText.TextWrapped = true
 
-wait(5)
-
-
 
 -- Scripts:
+
 
 local function VHVWS_fake_script() -- Logo.LocalScript 
 	local script = Instance.new('LocalScript', Logo)
@@ -103,5 +103,11 @@ local function VHVWS_fake_script() -- Logo.LocalScript
 	
 	game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.All,true) -- optional
 	script.Parent.Parent.Parent:Destroy() -- removes the gui (make sure ResetOnSpawn is false!)
+
 end
 coroutine.wrap(VHVWS_fake_script)()
+
+
+wait(5)
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Interstella-Hub/Hub/master/W%20V"))()
