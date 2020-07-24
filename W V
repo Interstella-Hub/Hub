@@ -169,7 +169,7 @@ KcrolAdminText.BackgroundTransparency = 1.000
 KcrolAdminText.Position = UDim2.new(-0.00178217888, 0, 0.161579877, 0)
 KcrolAdminText.Size = UDim2.new(0, 229, 0, 43)
 KcrolAdminText.Font = Enum.Font.GothamBlack
-KcrolAdminText.Text = Vampyrism MKII 2.0"
+KcrolAdminText.Text = "Vampyrism MKII 2.0"
 KcrolAdminText.TextColor3 = Color3.fromRGB(255, 255, 255)
 KcrolAdminText.TextSize = 13.000
 
